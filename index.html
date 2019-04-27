@@ -62,9 +62,72 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-b" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-MSF自动化浏览器攻击与后门安装" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2019/04/28/b/" class="article-date">
+    <a href="/2019/04/28/MSF自动化浏览器攻击与后门安装/" class="article-date">
+  <time datetime="2019-04-27T21:37:11.000Z" itemprop="datePublished">2019-04-28</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/28/MSF自动化浏览器攻击与后门安装/">MSF自动化浏览器攻击与后门安装</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>typora-copy-images-to: MSF自动化浏览器攻击与后门安装 </p>
+<p>0x01：自动化浏览器攻击介绍：</p>
+<p>browser_autopwn是Metasploit提供的辅助功能模块。在用户访问Web页面时，它会自动攻击受害者的浏览器。在开始攻击之前，browser_autopwn能够检测用户使用的浏览器类型， browser_autopwn将根据浏览器的检测结果，自行部署最合适的exploit。</p>
+<p>0x02：首先进入metasploit，然后搜索该模块，如图1-1，1-2.</p>
+<p>图1-1.</p>
+<p>图1-2.</p>
+<p>0x03：选择第二个模块，经过测试发现第一个模块的exploit比第二个的要少很多，选择之后查看配置选项，如图1-3.</p>
+<p>图1-3.</p>
+<p>0x04：设置配置选项，注意SRVHOST代表回连IP，设置为自己的，URIPATH代表路径设置，这个设置为Auto（自动），如图1-4.</p>
+<p>图1-4.</p>
+<p>0x05：稍等片刻后会得到一个自动化攻击的URL，只要对方打开了这个URL，模块就会检测这个浏览器的类型以及版本，使用的操作系统，然后根据这些信息进一步去匹配漏洞，发现漏洞后会自动进行攻击，成功后返回一个meterpreter.</p>
+<p>图1-5.</p>
+<p>图1-6.</p>
+<p>图1-7.</p>
+<p>0x06：现在开始安装后门.</p>
+<p>图1-8.</p>
+<p>-i 重连时间隔间（秒）</p>
+<p>-r 设置回连的ip,设为自己（攻击方）的</p>
+<p>-p 设置回连的端口</p>
+<p>-X 开机自动启动</p>
+<p>-h 查看详细帮助信息.</p>
+<p>0x07：开启监听模块并设置攻击载荷，LPORT必须要与安装后门时设置的回连端口相同.</p>
+<p>图1-9.</p>
+<p>End：目标机重启后自动连接.</p>
+<p>图1-10.</p>
+<p>其实后门的原理很简单，攻击者在得到meterpreter后创建了一个恶意启动项并写入了注册表，通过msconfig可以查看，然后通过netstat  -an查看当前的TCP连接.</p>
+<p>图1-11.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/04/28/MSF自动化浏览器攻击与后门安装/" data-id="cjv011auj0002bov8bota38t3" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-搭建WEB版Kali Linux渗透系统" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/04/28/搭建WEB版Kali Linux渗透系统/" class="article-date">
   <time datetime="2019-04-27T21:19:27.000Z" itemprop="datePublished">2019-04-28</time>
 </a>
     
@@ -76,7 +139,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/04/28/b/">b</a>
+      <a class="article-title" href="/2019/04/28/搭建WEB版Kali Linux渗透系统/">搭建WEB版Kali Linux渗透系统</a>
     </h1>
   
 
@@ -84,12 +147,44 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>typora-copy-images-to: b </p>
+        <p>typora-copy-images-to: 搭建WEB版Kali Linux渗透系统 </p>
+<p>你有没有想过在浏览器中运行kali？访问某个网址后，就可以轻松运行自己的kali系统对目标进行渗透。</p>
+<p>0x00 准备工具</p>
+<p>SSH web环境（Shellinabox）</p>
+<p>映射工具（ngrok）</p>
+<p>0x01 环境搭建</p>
+<p>apt-get install shellinabox</p>
+<p><img src="https://ask.qcloudimg.com/http-save/developer-news/tzhsc6mzcw.gif" alt="img"></p>
+<p>安装完后，我们需要新建一个账户，因为shellinabox默认不允许直接用root登录，我们可以用adduser添加一个自己喜欢的账号，例：</p>
+<p><img src="https://ask.qcloudimg.com/http-save/developer-news/e5zreazxte.gif" alt="img"></p>
+<p>密码输入框默认是不会显示你输入的密码的</p>
+<p>到这里我们基本上可以运行我们的SSH WEB环境。启动后默认端口为4200。再用ifconfig获取你的kali机内网ip，再通过访问<a href="http://ip:4200/来访问你的WEB版kali。" target="_blank" rel="noopener">http://ip:4200/来访问你的WEB版kali。</a></p>
+<p>shellinaboxd -b -t#启动ssh web环境 -b:后台启动 -t:以http方式</p>
+<p><img src="https://ask.qcloudimg.com/http-save/developer-news/68uss5qlmq.gif" alt="img"></p>
+<p>如果你想要让朋友也访问到你的机器，你可以采用（ngrok）外网映射，或者直接制作一台外网的kali服务器。</p>
+<p>0x02 外网映射</p>
+<p>到ngork官网注册登录(<a href="https://ngrok.cc/)，转到隧道开通，买那个免费的香港服务器。" target="_blank" rel="noopener">https://ngrok.cc/)，转到隧道开通，买那个免费的香港服务器。</a></p>
+<p><img src="https://ask.qcloudimg.com/http-save/developer-news/bb8bj811as.jpeg?imageView2/2/w/1620" alt="img"></p>
+<p>协议选http，隧道名称跟前置域名自定义，本地端口写kali服务器的端口，ip写kali机器的ip，端口就写ssh web的端口4200，http验证用户名跟密码选填，最后直接点确定添加。</p>
+<p><img src="https://ask.qcloudimg.com/http-save/developer-news/pnc9k8d51o.jpeg?imageView2/2/w/1620" alt="img"></p>
+<p>下载ngrok客户端(<a href="https://ngrok.cc/download.html" target="_blank" rel="noopener">https://ngrok.cc/download.html</a>)</p>
+<p>由于我的kali版本是amd64的。所以选择64bit版本。</p>
+<p><img src="https://ask.qcloudimg.com/http-save/developer-news/9e3mjwllqy.jpeg?imageView2/2/w/1620" alt="img"></p>
+<p>下载到kali机器里面unzip命令解压。进入隧道管理，将隧道ID复制，再执行ngrok命令开始映射。</p>
+<p>chmod 777 sunny #如果出现其他问题可尝试赋予权限./sunny clientid 隧道id</p>
+<p>个人感觉映射后访问很慢，执行命令也一卡一卡的，毫无体验，建议直接开台外网kali服务器。</p>
+<p><strong>如何制作一个kali外网服务器</strong></p>
+<p>一般的，在攻击目标时，我们在虚拟机用msfconsole生成木马时，会有一个疑问，怎么将kali开放成外网。总是要将内网映射到外网，否则shellcode不会弹到内网里来，很多人会嫌内网穿透非常麻烦，而新手对内网穿透更是摸不到脑，这里站长教各位Kali爱好者们如何搭建一个外网的kali服务器，免去内网映射麻烦。</p>
+<p>#选择机房</p>
+<p>这里站长推荐一个主机商，国外的Vultr主机商，因为支持自定义镜像，注册登录以后，我们可以直接在upload里将kali官方的下载地址放入，然后等一段时间镜像包就传好了，大概1分钟左右。</p>
+<ul>
+<li>发表于: 2018-12-07</li>
+</ul>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/04/28/b/" data-id="cjv00lyvz0001esv8mjsfmn7z" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/04/28/搭建WEB版Kali Linux渗透系统/" data-id="cjv011auk0003bov82jegll3t" class="article-share-link">Share</a>
       
       
     </footer>
@@ -146,7 +241,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/04/28/CVE-2018-2025（winrar远程代码执行漏洞）/" data-id="cjv00lyvt0000esv8ae1vah15" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/04/28/CVE-2018-2025（winrar远程代码执行漏洞）/" data-id="cjv011aua0000bov8nx5yhxp4" class="article-share-link">Share</a>
       
       
     </footer>
@@ -191,7 +286,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/03/24/hello-world/" data-id="cjv00lyw20002esv8h1foeebq" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/03/24/hello-world/" data-id="cjv011auh0001bov8ibmntxl3" class="article-share-link">Share</a>
       
       
     </footer>
@@ -232,7 +327,11 @@
       <ul>
         
           <li>
-            <a href="/2019/04/28/b/">b</a>
+            <a href="/2019/04/28/MSF自动化浏览器攻击与后门安装/">MSF自动化浏览器攻击与后门安装</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/28/搭建WEB版Kali Linux渗透系统/">搭建WEB版Kali Linux渗透系统</a>
           </li>
         
           <li>
