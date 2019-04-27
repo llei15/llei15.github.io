@@ -7,23 +7,20 @@
   
   <title>搭建WEB版Kali Linux渗透系统 | Na博客呀</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="typora-copy-images-to: 搭建WEB版Kali Linux渗透系统  你有没有想过在浏览器中运行kali？访问某个网址后，就可以轻松运行自己的kali系统对目标进行渗透。 0x00 准备工具 SSH web环境（Shellinabox） 映射工具（ngrok） 0x01 环境搭建 apt-get install shellinabox  安装完后，我们需要新建一个账户，因为sh">
+  <meta name="description" content="你有没有想过在浏览器中运行kali？访问某个网址后，就可以轻松运行自己的kali系统对目标进行渗透。 0x00 准备工具 SSH web环境（Shellinabox） 映射工具（ngrok） 0x01 环境搭建 apt-get install shellinabox  安装完后，我们需要新建一个账户，因为shellinabox默认不允许直接用root登录，我们可以用adduser添加一个自己喜欢的">
 <meta property="og:type" content="article">
 <meta property="og:title" content="搭建WEB版Kali Linux渗透系统">
 <meta property="og:url" content="http://yoursite.com/2019/04/28/搭建WEB版Kali Linux渗透系统/index.html">
 <meta property="og:site_name" content="Na博客呀">
-<meta property="og:description" content="typora-copy-images-to: 搭建WEB版Kali Linux渗透系统  你有没有想过在浏览器中运行kali？访问某个网址后，就可以轻松运行自己的kali系统对目标进行渗透。 0x00 准备工具 SSH web环境（Shellinabox） 映射工具（ngrok） 0x01 环境搭建 apt-get install shellinabox  安装完后，我们需要新建一个账户，因为sh">
+<meta property="og:description" content="你有没有想过在浏览器中运行kali？访问某个网址后，就可以轻松运行自己的kali系统对目标进行渗透。 0x00 准备工具 SSH web环境（Shellinabox） 映射工具（ngrok） 0x01 环境搭建 apt-get install shellinabox  安装完后，我们需要新建一个账户，因为shellinabox默认不允许直接用root登录，我们可以用adduser添加一个自己喜欢的">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="https://ask.qcloudimg.com/http-save/developer-news/tzhsc6mzcw.gif">
 <meta property="og:image" content="https://ask.qcloudimg.com/http-save/developer-news/e5zreazxte.gif">
 <meta property="og:image" content="https://ask.qcloudimg.com/http-save/developer-news/68uss5qlmq.gif">
-<meta property="og:image" content="https://ask.qcloudimg.com/http-save/developer-news/bb8bj811as.jpeg?imageView2/2/w/1620">
-<meta property="og:image" content="https://ask.qcloudimg.com/http-save/developer-news/pnc9k8d51o.jpeg?imageView2/2/w/1620">
-<meta property="og:image" content="https://ask.qcloudimg.com/http-save/developer-news/9e3mjwllqy.jpeg?imageView2/2/w/1620">
-<meta property="og:updated_time" content="2019-04-27T21:34:50.639Z">
+<meta property="og:updated_time" content="2019-04-27T21:53:07.395Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="搭建WEB版Kali Linux渗透系统">
-<meta name="twitter:description" content="typora-copy-images-to: 搭建WEB版Kali Linux渗透系统  你有没有想过在浏览器中运行kali？访问某个网址后，就可以轻松运行自己的kali系统对目标进行渗透。 0x00 准备工具 SSH web环境（Shellinabox） 映射工具（ngrok） 0x01 环境搭建 apt-get install shellinabox  安装完后，我们需要新建一个账户，因为sh">
+<meta name="twitter:description" content="你有没有想过在浏览器中运行kali？访问某个网址后，就可以轻松运行自己的kali系统对目标进行渗透。 0x00 准备工具 SSH web环境（Shellinabox） 映射工具（ngrok） 0x01 环境搭建 apt-get install shellinabox  安装完后，我们需要新建一个账户，因为shellinabox默认不允许直接用root登录，我们可以用adduser添加一个自己喜欢的">
 <meta name="twitter:image" content="https://ask.qcloudimg.com/http-save/developer-news/tzhsc6mzcw.gif">
   
     <link rel="alternate" href="/atom.xml" title="Na博客呀" type="application/atom+xml">
@@ -93,8 +90,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>typora-copy-images-to: 搭建WEB版Kali Linux渗透系统 </p>
-<p>你有没有想过在浏览器中运行kali？访问某个网址后，就可以轻松运行自己的kali系统对目标进行渗透。</p>
+        <p>你有没有想过在浏览器中运行kali？访问某个网址后，就可以轻松运行自己的kali系统对目标进行渗透。</p>
 <p>0x00 准备工具</p>
 <p>SSH web环境（Shellinabox）</p>
 <p>映射工具（ngrok）</p>
@@ -110,27 +106,19 @@
 <p>如果你想要让朋友也访问到你的机器，你可以采用（ngrok）外网映射，或者直接制作一台外网的kali服务器。</p>
 <p>0x02 外网映射</p>
 <p>到ngork官网注册登录(<a href="https://ngrok.cc/)，转到隧道开通，买那个免费的香港服务器。" target="_blank" rel="noopener">https://ngrok.cc/)，转到隧道开通，买那个免费的香港服务器。</a></p>
-<p><img src="https://ask.qcloudimg.com/http-save/developer-news/bb8bj811as.jpeg?imageView2/2/w/1620" alt="img"></p>
 <p>协议选http，隧道名称跟前置域名自定义，本地端口写kali服务器的端口，ip写kali机器的ip，端口就写ssh web的端口4200，http验证用户名跟密码选填，最后直接点确定添加。</p>
-<p><img src="https://ask.qcloudimg.com/http-save/developer-news/pnc9k8d51o.jpeg?imageView2/2/w/1620" alt="img"></p>
 <p>下载ngrok客户端(<a href="https://ngrok.cc/download.html" target="_blank" rel="noopener">https://ngrok.cc/download.html</a>)</p>
 <p>由于我的kali版本是amd64的。所以选择64bit版本。</p>
-<p><img src="https://ask.qcloudimg.com/http-save/developer-news/9e3mjwllqy.jpeg?imageView2/2/w/1620" alt="img"></p>
 <p>下载到kali机器里面unzip命令解压。进入隧道管理，将隧道ID复制，再执行ngrok命令开始映射。</p>
 <p>chmod 777 sunny #如果出现其他问题可尝试赋予权限./sunny clientid 隧道id</p>
 <p>个人感觉映射后访问很慢，执行命令也一卡一卡的，毫无体验，建议直接开台外网kali服务器。</p>
 <p><strong>如何制作一个kali外网服务器</strong></p>
 <p>一般的，在攻击目标时，我们在虚拟机用msfconsole生成木马时，会有一个疑问，怎么将kali开放成外网。总是要将内网映射到外网，否则shellcode不会弹到内网里来，很多人会嫌内网穿透非常麻烦，而新手对内网穿透更是摸不到脑，这里站长教各位Kali爱好者们如何搭建一个外网的kali服务器，免去内网映射麻烦。</p>
-<p>#选择机房</p>
-<p>这里站长推荐一个主机商，国外的Vultr主机商，因为支持自定义镜像，注册登录以后，我们可以直接在upload里将kali官方的下载地址放入，然后等一段时间镜像包就传好了，大概1分钟左右。</p>
-<ul>
-<li>发表于: 2018-12-07</li>
-</ul>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/04/28/搭建WEB版Kali Linux渗透系统/" data-id="cjv011auk0003bov82jegll3t" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/04/28/搭建WEB版Kali Linux渗透系统/" data-id="cjv01mtjl0003twv8fu71zhyy" class="article-share-link">Share</a>
       
       
     </footer>
