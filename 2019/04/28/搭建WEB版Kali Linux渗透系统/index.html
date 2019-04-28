@@ -7,21 +7,17 @@
   
   <title>搭建WEB版Kali Linux渗透系统 | Na博客呀</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="你有没有想过在浏览器中运行kali？访问某个网址后，就可以轻松运行自己的kali系统对目标进行渗透。 0x00 准备工具 SSH web环境（Shellinabox） 映射工具（ngrok） 0x01 环境搭建 apt-get install shellinabox  安装完后，我们需要新建一个账户，因为shellinabox默认不允许直接用root登录，我们可以用adduser添加一个自己喜欢的">
+  <meta name="description" content="你有没有想过在浏览器中运行kali？访问某个网址后，就可以轻松运行自己的kali系统对目标进行渗透。 0x00 准备工具 SSH web环境（Shellinabox） 映射工具（ngrok） 0x01 环境搭建 apt-get install shellinabox 安装完后，我们需要新建一个账户，因为shellinabox默认不允许直接用root登录，我们可以用adduser添加一个自己喜欢的账">
 <meta property="og:type" content="article">
 <meta property="og:title" content="搭建WEB版Kali Linux渗透系统">
 <meta property="og:url" content="http://yoursite.com/2019/04/28/搭建WEB版Kali Linux渗透系统/index.html">
 <meta property="og:site_name" content="Na博客呀">
-<meta property="og:description" content="你有没有想过在浏览器中运行kali？访问某个网址后，就可以轻松运行自己的kali系统对目标进行渗透。 0x00 准备工具 SSH web环境（Shellinabox） 映射工具（ngrok） 0x01 环境搭建 apt-get install shellinabox  安装完后，我们需要新建一个账户，因为shellinabox默认不允许直接用root登录，我们可以用adduser添加一个自己喜欢的">
+<meta property="og:description" content="你有没有想过在浏览器中运行kali？访问某个网址后，就可以轻松运行自己的kali系统对目标进行渗透。 0x00 准备工具 SSH web环境（Shellinabox） 映射工具（ngrok） 0x01 环境搭建 apt-get install shellinabox 安装完后，我们需要新建一个账户，因为shellinabox默认不允许直接用root登录，我们可以用adduser添加一个自己喜欢的账">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="https://ask.qcloudimg.com/http-save/developer-news/tzhsc6mzcw.gif">
-<meta property="og:image" content="https://ask.qcloudimg.com/http-save/developer-news/e5zreazxte.gif">
-<meta property="og:image" content="https://ask.qcloudimg.com/http-save/developer-news/68uss5qlmq.gif">
-<meta property="og:updated_time" content="2019-04-27T21:53:07.395Z">
+<meta property="og:updated_time" content="2019-04-28T01:57:56.395Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="搭建WEB版Kali Linux渗透系统">
-<meta name="twitter:description" content="你有没有想过在浏览器中运行kali？访问某个网址后，就可以轻松运行自己的kali系统对目标进行渗透。 0x00 准备工具 SSH web环境（Shellinabox） 映射工具（ngrok） 0x01 环境搭建 apt-get install shellinabox  安装完后，我们需要新建一个账户，因为shellinabox默认不允许直接用root登录，我们可以用adduser添加一个自己喜欢的">
-<meta name="twitter:image" content="https://ask.qcloudimg.com/http-save/developer-news/tzhsc6mzcw.gif">
+<meta name="twitter:description" content="你有没有想过在浏览器中运行kali？访问某个网址后，就可以轻松运行自己的kali系统对目标进行渗透。 0x00 准备工具 SSH web环境（Shellinabox） 映射工具（ngrok） 0x01 环境搭建 apt-get install shellinabox 安装完后，我们需要新建一个账户，因为shellinabox默认不允许直接用root登录，我们可以用adduser添加一个自己喜欢的账">
   
     <link rel="alternate" href="/atom.xml" title="Na博客呀" type="application/atom+xml">
   
@@ -71,7 +67,7 @@
         <section id="main"><article id="post-搭建WEB版Kali Linux渗透系统" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/04/28/搭建WEB版Kali Linux渗透系统/" class="article-date">
-  <time datetime="2019-04-27T21:19:27.000Z" itemprop="datePublished">2019-04-28</time>
+  <time datetime="2019-04-27T21:19:27.093Z" itemprop="datePublished">2019-04-28</time>
 </a>
     
   </div>
@@ -96,13 +92,10 @@
 <p>映射工具（ngrok）</p>
 <p>0x01 环境搭建</p>
 <p>apt-get install shellinabox</p>
-<p><img src="https://ask.qcloudimg.com/http-save/developer-news/tzhsc6mzcw.gif" alt="img"></p>
-<p>安装完后，我们需要新建一个账户，因为shellinabox默认不允许直接用root登录，我们可以用adduser添加一个自己喜欢的账号，例：</p>
-<p><img src="https://ask.qcloudimg.com/http-save/developer-news/e5zreazxte.gif" alt="img"></p>
+<p>安装完后，我们需要新建一个账户，因为shellinabox默认不允许直接用root登录，我们可以用adduser添加一个自己喜欢的账号，</p>
 <p>密码输入框默认是不会显示你输入的密码的</p>
 <p>到这里我们基本上可以运行我们的SSH WEB环境。启动后默认端口为4200。再用ifconfig获取你的kali机内网ip，再通过访问<a href="http://ip:4200/来访问你的WEB版kali。" target="_blank" rel="noopener">http://ip:4200/来访问你的WEB版kali。</a></p>
 <p>shellinaboxd -b -t#启动ssh web环境 -b:后台启动 -t:以http方式</p>
-<p><img src="https://ask.qcloudimg.com/http-save/developer-news/68uss5qlmq.gif" alt="img"></p>
 <p>如果你想要让朋友也访问到你的机器，你可以采用（ngrok）外网映射，或者直接制作一台外网的kali服务器。</p>
 <p>0x02 外网映射</p>
 <p>到ngork官网注册登录(<a href="https://ngrok.cc/)，转到隧道开通，买那个免费的香港服务器。" target="_blank" rel="noopener">https://ngrok.cc/)，转到隧道开通，买那个免费的香港服务器。</a></p>
@@ -118,7 +111,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/04/28/搭建WEB版Kali Linux渗透系统/" data-id="cjv01mtjl0003twv8fu71zhyy" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/04/28/搭建WEB版Kali Linux渗透系统/" data-id="cjv0abhlq0003agv886labaut" class="article-share-link">Share</a>
       
       
     </footer>

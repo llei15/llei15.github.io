@@ -7,17 +7,17 @@
   
   <title>MSF自动化浏览器攻击与后门安装 | Na博客呀</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="0x01：自动化浏览器攻击介绍： browser_autopwn是Metasploit提供的辅助功能模块。在用户访问Web页面时，它会自动攻击受害者的浏览器。在开始攻击之前，browser_autopwn能够检测用户使用的浏览器类型， browser_autopwn将根据浏览器的检测结果，自行部署最合适的exploit。 0x02：首先进入metasploit，然后搜索该模块，如图1-1，1-2.">
+  <meta name="description" content="1：自动化浏览器攻击介绍： browser_autopwn是Metasploit提供的辅助功能模块。在用户访问Web页面时，它会自动攻击受害者的浏览器。在开始攻击之前，browser_autopwn能够检测用户使用的浏览器类型， browser_autopwn将根据浏览器的检测结果，自行部署最合适的exploit。 2：首先进入metasploit，然后搜索该模块 3：选择第二个模块，经过测试发现">
 <meta property="og:type" content="article">
 <meta property="og:title" content="MSF自动化浏览器攻击与后门安装">
 <meta property="og:url" content="http://yoursite.com/2019/04/28/MSF自动化浏览器攻击与后门安装/index.html">
 <meta property="og:site_name" content="Na博客呀">
-<meta property="og:description" content="0x01：自动化浏览器攻击介绍： browser_autopwn是Metasploit提供的辅助功能模块。在用户访问Web页面时，它会自动攻击受害者的浏览器。在开始攻击之前，browser_autopwn能够检测用户使用的浏览器类型， browser_autopwn将根据浏览器的检测结果，自行部署最合适的exploit。 0x02：首先进入metasploit，然后搜索该模块，如图1-1，1-2.">
+<meta property="og:description" content="1：自动化浏览器攻击介绍： browser_autopwn是Metasploit提供的辅助功能模块。在用户访问Web页面时，它会自动攻击受害者的浏览器。在开始攻击之前，browser_autopwn能够检测用户使用的浏览器类型， browser_autopwn将根据浏览器的检测结果，自行部署最合适的exploit。 2：首先进入metasploit，然后搜索该模块 3：选择第二个模块，经过测试发现">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-04-27T21:53:21.366Z">
+<meta property="og:updated_time" content="2019-04-28T01:56:39.653Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MSF自动化浏览器攻击与后门安装">
-<meta name="twitter:description" content="0x01：自动化浏览器攻击介绍： browser_autopwn是Metasploit提供的辅助功能模块。在用户访问Web页面时，它会自动攻击受害者的浏览器。在开始攻击之前，browser_autopwn能够检测用户使用的浏览器类型， browser_autopwn将根据浏览器的检测结果，自行部署最合适的exploit。 0x02：首先进入metasploit，然后搜索该模块，如图1-1，1-2.">
+<meta name="twitter:description" content="1：自动化浏览器攻击介绍： browser_autopwn是Metasploit提供的辅助功能模块。在用户访问Web页面时，它会自动攻击受害者的浏览器。在开始攻击之前，browser_autopwn能够检测用户使用的浏览器类型， browser_autopwn将根据浏览器的检测结果，自行部署最合适的exploit。 2：首先进入metasploit，然后搜索该模块 3：选择第二个模块，经过测试发现">
   
     <link rel="alternate" href="/atom.xml" title="Na博客呀" type="application/atom+xml">
   
@@ -67,7 +67,7 @@
         <section id="main"><article id="post-MSF自动化浏览器攻击与后门安装" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/04/28/MSF自动化浏览器攻击与后门安装/" class="article-date">
-  <time datetime="2019-04-27T21:37:11.000Z" itemprop="datePublished">2019-04-28</time>
+  <time datetime="2019-04-27T21:37:11.349Z" itemprop="datePublished">2019-04-28</time>
 </a>
     
   </div>
@@ -86,37 +86,26 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>0x01：自动化浏览器攻击介绍：</p>
+        <p>1：自动化浏览器攻击介绍：</p>
 <p>browser_autopwn是Metasploit提供的辅助功能模块。在用户访问Web页面时，它会自动攻击受害者的浏览器。在开始攻击之前，browser_autopwn能够检测用户使用的浏览器类型， browser_autopwn将根据浏览器的检测结果，自行部署最合适的exploit。</p>
-<p>0x02：首先进入metasploit，然后搜索该模块，如图1-1，1-2.</p>
-<p>图1-1.</p>
-<p>图1-2.</p>
-<p>0x03：选择第二个模块，经过测试发现第一个模块的exploit比第二个的要少很多，选择之后查看配置选项，如图1-3.</p>
-<p>图1-3.</p>
-<p>0x04：设置配置选项，注意SRVHOST代表回连IP，设置为自己的，URIPATH代表路径设置，这个设置为Auto（自动），如图1-4.</p>
-<p>图1-4.</p>
-<p>0x05：稍等片刻后会得到一个自动化攻击的URL，只要对方打开了这个URL，模块就会检测这个浏览器的类型以及版本，使用的操作系统，然后根据这些信息进一步去匹配漏洞，发现漏洞后会自动进行攻击，成功后返回一个meterpreter.</p>
-<p>图1-5.</p>
-<p>图1-6.</p>
-<p>图1-7.</p>
-<p>0x06：现在开始安装后门.</p>
-<p>图1-8.</p>
+<p>2：首先进入metasploit，然后搜索该模块</p>
+<p>3：选择第二个模块，经过测试发现第一个模块的exploit比第二个的要少很多，选择之后查看配置选项</p>
+<p>4：设置配置选项，注意SRVHOST代表回连IP，设置为自己的，URIPATH代表路径设置，这个设置为Auto（自动） </p>
+<p>5：稍等片刻后会得到一个自动化攻击的URL，只要对方打开了这个URL，模块就会检测这个浏览器的类型以及版本，使用的操作系统，然后根据这些信息进一步去匹配漏洞，发现漏洞后会自动进行攻击，成功后返回一个meterpreter</p>
+<p>6：现在开始安装后门</p>
 <p>-i 重连时间隔间（秒）</p>
 <p>-r 设置回连的ip,设为自己（攻击方）的</p>
 <p>-p 设置回连的端口</p>
 <p>-X 开机自动启动</p>
-<p>-h 查看详细帮助信息.</p>
-<p>0x07：开启监听模块并设置攻击载荷，LPORT必须要与安装后门时设置的回连端口相同.</p>
-<p>图1-9.</p>
-<p>End：目标机重启后自动连接.</p>
-<p>图1-10.</p>
+<p>-h 查看详细帮助信息</p>
+<p>7：开启监听模块并设置攻击载荷，LPORT必须要与安装后门时设置的回连端口相同</p>
+<p>8：目标机重启后自动连接</p>
 <p>其实后门的原理很简单，攻击者在得到meterpreter后创建了一个恶意启动项并写入了注册表，通过msconfig可以查看，然后通过netstat  -an查看当前的TCP连接.</p>
-<p>图1-11.</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/04/28/MSF自动化浏览器攻击与后门安装/" data-id="cjv01mtjd0001twv85r8eh1wm" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/04/28/MSF自动化浏览器攻击与后门安装/" data-id="cjv0abhlb0000agv8r8r3o3l7" class="article-share-link">Share</a>
       
       
     </footer>
